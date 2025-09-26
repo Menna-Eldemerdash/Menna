@@ -3,57 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menna Eldemerdash | Cybersecurity SOC Portfolio</title>
+    <title>Menna Eldemerdash | SOC Analyst Portfolio</title>
     <style>
-        /* Base Styles */
+        /* Base and Dark Mode Setup */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --dark-bg: #1A1A2E; /* Dark background for the body */
+            --header-bg: #0F0F23; /* Even darker for header/footer */
+            --card-bg: #272744; /* Slightly lighter dark for cards */
+            --accent-color: #00BFFF; /* Bright Blue/Cyan for Cybersecurity feel */
+            --text-light: #E0E0FF; /* Light text color */
+            --text-muted: #B0B0CC; /* Muted text color */
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f8f8;
+            color: var(--text-light);
+            background-color: var(--dark-bg);
             scroll-behavior: smooth;
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         a {
-            color: #007BFF; /* Professional Blue */
+            color: var(--accent-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #0056b3;
+            color: #64feda;
         }
 
         h1, h2, h3, h4 {
             margin-bottom: 0.5em;
-            color: #1a1a1a;
+            color: var(--text-light);
         }
-        
+
         /* Header & Navigation */
         header {
-            background-color: #1a1a1a;
-            color: white;
+            background-color: var(--header-bg);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
         header h1 {
-            color: white;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            color: var(--accent-color);
         }
 
         header .container {
@@ -68,11 +77,11 @@
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         nav ul li a {
-            color: white;
+            color: var(--text-light);
             font-weight: bold;
             padding-bottom: 5px;
             text-transform: uppercase;
@@ -80,61 +89,71 @@
         }
 
         nav ul li a:hover {
-            border-bottom: 2px solid #007BFF;
-            color: #007BFF;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--accent-color);
         }
 
-        /* Sections */
-        .section-padded {
-            padding: 80px 0;
-        }
-
-        .alt-bg {
-            background-color: #e9ecef;
-        }
-
-        /* Hero Section */
+        /* Hero Section (Mimics the image style) */
         .hero {
-            background-color: #343a40; /* Dark background color */
-            color: white;
+            background-color: var(--card-bg); /* Use card color for the hero area */
             padding: 120px 0;
             text-align: center;
-            /* يمكن إضافة صورة خلفية هنا */
-            /* background: url('cyber_bg.jpg') no-repeat center center/cover; */
+            border-bottom: 3px solid var(--accent-color);
         }
 
         .hero h2 {
             color: white;
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
         }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 900px;
-            margin: 0 auto 1.5rem;
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
         }
         .hero .quote {
             font-style: italic;
-            margin-bottom: 2rem;
             font-size: 1.1rem;
-            color: #ccc;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
         }
 
         .cta-button {
             display: inline-block;
-            background-color: #007BFF;
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--header-bg);
             padding: 12px 30px;
             border-radius: 5px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s;
         }
 
         .cta-button:hover {
-            background-color: #0056b3;
+            background-color: #64feda;
+            transform: translateY(-2px);
+        }
+
+        /* Sections and Layout */
+        .section-padded {
+            padding: 80px 0;
+        }
+
+        .alt-bg {
+            background-color: #15152a; /* Slightly darker than main BG */
+        }
+
+        /* Card Style */
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            border-left: 4px solid var(--accent-color);
         }
 
         /* Skills Grid */
@@ -145,19 +164,6 @@
             margin-top: 40px;
         }
 
-        .skill-card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid #007BFF; /* Blue accent line */
-        }
-
-        .skill-card h4 {
-            color: #007BFF;
-            margin-bottom: 15px;
-        }
-
         .skill-card ul {
             list-style: none;
             padding-left: 0;
@@ -165,16 +171,19 @@
 
         .skill-card ul li {
             padding: 8px 0;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
         }
-
+        .skill-card ul li strong {
+            color: var(--text-light);
+        }
         .skill-card ul li:last-child {
             border-bottom: none;
         }
 
-        /* Education Timeline */
+        /* Timeline (Education) */
         .timeline {
-            border-left: 3px solid #007BFF;
+            border-left: 3px solid var(--accent-color);
             padding-left: 30px;
             margin-top: 40px;
         }
@@ -191,50 +200,17 @@
             top: 5px;
             width: 15px;
             height: 15px;
-            background-color: #007BFF;
+            background-color: var(--accent-color);
             border-radius: 50%;
-            border: 4px solid #f8f8f8;
+            border: 4px solid var(--dark-bg);
         }
         .alt-bg .timeline-item::before {
-            border-color: #e9ecef;
+            border-color: #15152a; /* Match alt-bg */
         }
         .timeline-item h4 {
+            color: var(--accent-color);
             margin-top: 0;
-            color: #007BFF;
         }
-        .timeline-item strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* Project Card */
-        .project-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-
-        .project-card h4 {
-            color: #1a1a1a;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .project-overview {
-            font-style: italic;
-            margin: 15px 0;
-        }
-
-        .project-card ul {
-            padding-left: 25px;
-        }
-
-        .project-card ul li {
-            margin-bottom: 10px;
-        }
-
 
         /* Contact Info */
         .contact-info {
@@ -244,10 +220,8 @@
             gap: 50px;
             flex-wrap: wrap;
         }
-
         .contact-info p {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            color: var(--text-muted);
         }
         .contact-info a {
             font-weight: bold;
@@ -255,11 +229,12 @@
 
         /* Footer */
         footer {
-            background-color: #1a1a1a;
-            color: #ccc;
+            background-color: var(--header-bg);
+            color: var(--text-muted);
             text-align: center;
             padding: 25px 0;
             font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Media Queries for Responsiveness */
@@ -279,7 +254,7 @@
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .section-padded {
@@ -308,29 +283,30 @@
     <section id="about" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Cybersecurity Student specializing in **SOC Analysis**</h2>
+                <h2 style="font-weight: normal;">Creative **Cybersecurity Portfolio**</h2>
                 [cite_start]<p class="quote">"A collection of my work, achievements, and skills in Cybersecurity, demonstrating my growth and dedication to the field." [cite: 7]</p>
-                [cite_start]<p>"As a Cyber Security student specializing in SOC, I help organizations stay resilient by detecting and mitigating cyber threats, ensuring business continuity and protecting critical assets." [cite: 17]</p>
-                <a href="#contact" class="cta-button">Connect with Me</a>
+                <p class="subtitle">SOC Analyst (Aspiring)</p>
+                [cite_start]<p style="max-width: 800px; margin: 0 auto 30px; color: var(--text-light);">"As a Cyber Security student specializing in SOC, I help organizations stay resilient by detecting and mitigating cyber threats, ensuring business continuity and protecting critical assets." [cite: 17]</p>
+                <a href="#project" class="cta-button">View My Work</a>
             </div>
         </div>
     </section>
 
     <section id="vision-mission" class="section-padded alt-bg">
         <div class="container">
-            <h3 style="text-align: center; margin-bottom: 30px;">Vision & Mission</h3>
+            <h3 style="text-align: center; margin-bottom: 40px; color: var(--accent-color);">Vision & Mission</h3>
             <div style="display: flex; gap: 30px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 300px; padding: 20px; background-color: white; border-left: 4px solid #007BFF; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    [cite_start]<h4 style="color: #007BFF;">VISION [cite: 25]</h4>
-                    [cite_start]<p>"To become a skilled SOC Analyst who contributes to building secure digital environments, protecting organizations from evolving cyber threats, and inspiring future generations in the cybersecurity field." [cite: 28]</p>
+                <div class="card" style="flex: 1; min-width: 300px;">
+                    [cite_start]<h4 style="color: var(--accent-color);">VISION [cite: 25]</h4>
+                    [cite_start]<p style="color: var(--text-muted);">"To become a skilled SOC Analyst who contributes to building secure digital environments, protecting organizations from evolving cyber threats, and inspiring future generations in the cybersecurity field." [cite: 28]</p>
                 </div>
-                <div style="flex: 1; min-width: 300px; padding: 20px; background-color: white; border-left: 4px solid #007BFF; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    [cite_start]<h4 style="color: #007BFF;">MISSION [cite: 26]</h4>
-                    <ul style="list-style: disc; margin-left: 20px; padding-top: 10px;">
-                        [cite_start]<li>Develop strong skills in threat detection and incident response. [cite: 29]</li>
-                        [cite_start]<li>Gain hands-on expertise with SOC tools and security operations. [cite: 30]</li>
-                        [cite_start]<li>Support organizations in maintaining resilience against cyber threats. [cite: 31, 32]</li>
-                        [cite_start]<li>Continuously learn and adapt to evolving cybersecurity challenges. [cite: 33, 34]</li>
+                <div class="card" style="flex: 1; min-width: 300px;">
+                    [cite_start]<h4 style="color: var(--accent-color);">MISSION [cite: 26]</h4>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                        [cite_start]<li style="color: var(--text-muted); margin-bottom: 5px;">• Develop strong skills in threat detection and incident response. [cite: 29]</li>
+                        [cite_start]<li style="color: var(--text-muted); margin-bottom: 5px;">• Gain hands-on expertise with SOC tools and security operations. [cite: 30]</li>
+                        [cite_start]<li style="color: var(--text-muted); margin-bottom: 5px;">• Support organizations in maintaining resilience against cyber threats. [cite: 31, 32]</li>
+                        [cite_start]<li style="color: var(--text-muted);">• Continuously learn and adapt to evolving cybersecurity challenges. [cite: 33, 34]</li>
                     </ul>
                 </div>
             </div>
@@ -339,33 +315,33 @@
     
     <section id="skills" class="section-padded">
         <div class="container">
-            [cite_start]<h3 style="text-align: center;">Technical & Personal Skills [cite: 35]</h3>
+            <h3 style="text-align: center; color: var(--accent-color);">Technical & Personal Skills</h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Core Specialties (Technical)</h4>
+                <div class="skill-card card">
+                    <h4>Core Specialties</h4>
                     <ul>
                         [cite_start]<li>**Incident Response** [cite: 36, 37]</li>
                         [cite_start]<li>**Vulnerability Assessment** [cite: 38, 39]</li>
                         [cite_start]<li>**Malware Analysis** [cite: 40, 41]</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h4>Soft Skills (Attributes)</h4>
+                <div class="skill-card card">
+                    <h4>Soft Skills</h4>
                     <ul>
-                        [cite_start]<li>Analytical [cite: 21]</li>
-                        [cite_start]<li>Detail-Oriented [cite: 22]</li>
-                        [cite_start]<li>Problem Solver [cite: 23]</li>
-                        [cite_start]<li>Team Player [cite: 24]</li>
+                        [cite_start]<li>**ANALYTICAL** [cite: 21]</li>
+                        [cite_start]<li>**DETAIL-ORIENTED** [cite: 22]</li>
+                        [cite_start]<li>**PROBLEM SOLVER** [cite: 23]</li>
+                        [cite_start]<li>**TEAM PLAYER** [cite: 24]</li>
                     </ul>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card card">
                     <h4>Tools & Expertise</h4>
                     <ul>
-                        [cite_start]<li>**Burp Suite** [cite: 135]</li>
-                        [cite_start]<li>**OWASP ZAP** [cite: 135]</li>
-                        [cite_start]<li>**Kali Linux** [cite: 135]</li>
-                        [cite_start]<li>Threat Detection & Incident Response [cite: 29]</li>
-                        [cite_start]<li>Experience in SOC Tools for Incident Analysis [cite: 62]</li>
+                        <li>Burp Suite</li>
+                        <li>OWASP ZAP</li>
+                        <li>Kali Linux</li>
+                        <li>Threat Detection & Incident Response</li>
+                        [cite_start]<li>**SOC Tools** for Incident Analysis [cite: 62]</li>
                     </ul>
                 </div>
             </div>
@@ -374,22 +350,21 @@
 
     <section id="education" class="section-padded alt-bg">
         <div class="container">
-            [cite_start]<h3 style="text-align: center;">Educational Background [cite: 48]</h3>
+            [cite_start]<h3 style="text-align: center; color: var(--accent-color);">Educational Background [cite: 48]</h3>
             <div class="timeline">
                 <div class="timeline-item">
                     [cite_start]<h4>**MENOFIA UNIVERSITY** [cite: 49]</h4>
-                    [cite_start]<strong>Faculty of Artificial Intelligence, Cybersecurity Department [cite: 51, 52]</strong>
-                    [cite_start]<p>2023 - 2027 [cite: 50]</p>
+                    [cite_start]<strong style="color: var(--text-light);">Faculty of Artificial Intelligence, Cybersecurity Department [cite: 51, 52]</strong>
+                    [cite_start]<p style="color: var(--text-muted);">2023 - 2027 [cite: 50]</p>
                 </div>
                 <div class="timeline-item">
                     [cite_start]<h4>**Cisco Networking Course** (Training Program) [cite: 53, 54]</h4>
-                    [cite_start]<p>Covered networking fundamentals, routing & switching basics, and hands-on labs to build practical skills. [cite: 56]</p>
-                    [cite_start]<p>2024 [cite: 55]</p>
+                    [cite_start]<p style="color: var(--text-muted);">Covered networking fundamentals, routing & switching basics, and hands-on labs to build practical skills. [cite: 56]</p>
+                    [cite_start]<p style="color: var(--text-muted);">2024 [cite: 55]</p>
                 </div>
                 <div class="timeline-item">
-                    [cite_start]<h4>Cyber Security Fundamentals Course (NTI) [cite: 61]</h4>
-                    [cite_start]<p>Learned how networks operate, including IP addresses, protocols, and common security threats. [cite: 61]</p>
-                    [cite_start]<p>Practiced using SOC tools to detect and analyze incidents, gaining experience in vulnerability assessment, penetration testing, and risk analysis. [cite: 62]</p>
+                    <h4>Cyber Security Fundamentals Course (NTI)</h4>
+                    [cite_start]<p style="color: var(--text-muted);">Learned how networks operate, including IP addresses, protocols, and common security threats[cite: 61]. [cite_start]Practiced using SOC tools to detect and analyze incidents[cite: 62].</p>
                 </div>
             </div>
         </div>
@@ -397,26 +372,26 @@
 
     <section id="project" class="section-padded">
         <div class="container">
-            <h3 style="text-align: center;">Featured Project</h3>
-            <div class="project-card">
+            [cite_start]<h3 style="text-align: center; color: var(--accent-color);">Featured Project [cite: 64]</h3>
+            <div class="project-card card">
                 [cite_start]<h4>**Vulnerability Assessment on Mutillidae Web Application** [cite: 65]</h4>
-                [cite_start]<p class="project-overview">Completed a penetration testing project as part of the Cybersecurity Academy Training by the National Telecommunication Institute (NTI). [cite: 67] [cite_start]The project focused on assessing security vulnerabilities in Mutillidae, a deliberately vulnerable web application. [cite: 68]</p>
-                [cite_start]<h5 style="color: #007BFF; margin-top: 20px;">Key Deliverables: [cite: 121]</h5>
-                <ul style="list-style: square; margin-left: 25px;">
-                    [cite_start]<li>Identified and exploited multiple vulnerabilities including: **SQL Injection**, Local File Inclusion (LFI), Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Command Injection & Reverse Shell, PII Disclosure, IDOR, and Security Misconfigurations. [cite: 133]</li>
-                    [cite_start]<li>Documented findings in a professional penetration testing report with Proof of Concepts (PoCs). [cite: 134]</li>
-                    [cite_start]<li>Applied industry-standard tools such as Burp Suite, OWASP ZAP, and Kali Linux for testing. [cite: 135]</li>
-                    [cite_start]<li>Collaborated in a team environment, enhancing teamwork and technical reporting skills. [cite: 136]</li>
+                [cite_start]<p style="font-style: italic; margin: 15px 0; color: var(--text-muted);">Completed a penetration testing project as part of the Cybersecurity Academy Training by the National Telecommunication Institute (NTI). [cite: 67]</p>
+                [cite_start]<h5 style="color: var(--accent-color); margin-top: 20px;">Key Deliverables: [cite: 121]</h5>
+                <ul style="list-style: square; margin-left: 25px; color: var(--text-muted);">
+                    [cite_start]<li>Identified and exploited multiple vulnerabilities including: **SQL Injection**, Local File Inclusion (LFI), Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Command Injection & Reverse Shell, PII Disclosure, IDOR, and Security Misconfigurations[cite: 126, 133].</li>
+                    [cite_start]<li>Documented findings in a professional penetration testing report with Proof of Concepts (PoCs)[cite: 134].</li>
+                    [cite_start]<li>Applied industry-standard tools such as **Burp Suite, OWASP ZAP, and Kali Linux** for testing[cite: 135].</li>
+                    [cite_start]<li>Collaborated in a team environment, enhancing teamwork and technical reporting skills[cite: 136].</li>
                 </ul>
-                [cite_start]<p style="margin-top: 20px; font-weight: bold; font-style: italic;">Example Payload: OR '1'='1' (for login bypass/data disclosure) [cite: 118, 119]</p>
+                [cite_start]<p style="margin-top: 20px; font-weight: bold; font-style: italic; color: var(--text-light);">Example Payload: OR '1'='1' (for login bypass/data disclosure) [cite: 118, 119]</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section-padded alt-bg">
         <div class="container" style="text-align: center;">
-            [cite_start]<h3>Let's Work Together! [cite: 138, 139]</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 30px;">I'm eager to contribute to building secure digital environments. Feel free to connect!</p>
+            [cite_start]<h3 style="color: var(--accent-color);">Let's Work TOGETHER[cite: 138, 139]!</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px; color: var(--text-light);">I'm eager to contribute to building secure digital environments. Feel free to connect!</p>
             <div class="contact-info">
                 [cite_start]<p><strong>Email:</strong> <a href="mailto:menna.eldemerdash12@gmail.com">menna.eldemerdash12@gmail.com</a> [cite: 4, 142]</p>
                 [cite_start]<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/menna-eldemerdash" target="_blank">linkedin.com/in/menna-eldemerdash</a> [cite: 141]</p>
