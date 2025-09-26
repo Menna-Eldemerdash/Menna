@@ -3,132 +3,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menna Eldemerdash | SOC Analyst Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Menna Eldemerdash | Cybersecurity SOC Portfolio</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #007BFF; /* Professional Blue */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav ul li a:hover {
+            border-bottom: 2px solid #007BFF;
+            color: #007BFF;
+        }
+
+        /* Sections */
+        .section-padded {
+            padding: 80px 0;
+        }
+
+        .alt-bg {
+            background-color: #e9ecef;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #343a40; /* Dark background color */
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            /* يمكن إضافة صورة خلفية هنا */
+            /* background: url('cyber_bg.jpg') no-repeat center center/cover; */
+        }
+
+        .hero h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+        .hero .quote {
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #007BFF; /* Blue accent line */
+        }
+
+        .skill-card h4 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .skill-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            border-left: 3px solid #007BFF;
+            padding-left: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38.5px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: #007BFF;
+            border-radius: 50%;
+            border: 4px solid #f8f8f8;
+        }
+        .alt-bg .timeline-item::before {
+            border-color: #e9ecef;
+        }
+        .timeline-item h4 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .timeline-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Project Card */
+        .project-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .project-card h4 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .project-overview {
+            font-style: italic;
+            margin: 15px 0;
+        }
+
+        .project-card ul {
+            padding-left: 25px;
+        }
+
+        .project-card ul li {
+            margin-bottom: 10px;
+        }
+
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-padded {
+                padding: 60px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Menna Eldemerdash</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact" class="contact-button">Contact Me</a>
-        </nav>
+        <div class="container">
+            <h1>Menna Eldemerdash</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>Creative **Cybersecurity Portfolio**</h1>
-            <p class="intro-text">
-                "A collection of my work, achievements, and skills in Cybersecurity, demonstrating my growth and dedication to the field."
-            </p>
-            <p class="specialization">SOC Analyst</p>
-            <a href="#projects" class="view-work-button">View My Work</a>
-        </div>
-
-        <div class="scroll-prompt">
-            <h2 id="about">About Me</h2>
-            <div class="name-display">
-                <p>Hello, my name is</p>
-                <h3>Menna Eldemerdash</h3>
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Cybersecurity Student specializing in **SOC Analysis**</h2>
+                [cite_start]<p class="quote">"A collection of my work, achievements, and skills in Cybersecurity, demonstrating my growth and dedication to the field." [cite: 7]</p>
+                [cite_start]<p>"As a Cyber Security student specializing in SOC, I help organizations stay resilient by detecting and mitigating cyber threats, ensuring business continuity and protecting critical assets." [cite: 17]</p>
+                <a href="#contact" class="cta-button">Connect with Me</a>
             </div>
         </div>
     </section>
 
-    <section id="about-details" class="about-details">
-        <div class="bio-container">
-            <p class="quote">
-                "As a Cyber Security student specializing in SOC, I help organizations stay resilient by detecting and mitigating cyber threats, ensuring business continuity and protecting critical assets."
-            </p>
-            <div class="attributes">
-                <span>ANALYTICAL</span>
-                <span>DETAIL-ORIENTED</span>
-                <span>PROBLEM SOLVER</span>
-                <span>TEAM PLAYER</span>
+    <section id="vision-mission" class="section-padded alt-bg">
+        <div class="container">
+            <h3 style="text-align: center; margin-bottom: 30px;">Vision & Mission</h3>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px; padding: 20px; background-color: white; border-left: 4px solid #007BFF; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    [cite_start]<h4 style="color: #007BFF;">VISION [cite: 25]</h4>
+                    [cite_start]<p>"To become a skilled SOC Analyst who contributes to building secure digital environments, protecting organizations from evolving cyber threats, and inspiring future generations in the cybersecurity field." [cite: 28]</p>
+                </div>
+                <div style="flex: 1; min-width: 300px; padding: 20px; background-color: white; border-left: 4px solid #007BFF; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    [cite_start]<h4 style="color: #007BFF;">MISSION [cite: 26]</h4>
+                    <ul style="list-style: disc; margin-left: 20px; padding-top: 10px;">
+                        [cite_start]<li>Develop strong skills in threat detection and incident response. [cite: 29]</li>
+                        [cite_start]<li>Gain hands-on expertise with SOC tools and security operations. [cite: 30]</li>
+                        [cite_start]<li>Support organizations in maintaining resilience against cyber threats. [cite: 31, 32]</li>
+                        [cite_start]<li>Continuously learn and adapt to evolving cybersecurity challenges. [cite: 33, 34]</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="vision-mission">
-                <h3>Vision</h3>
-                <p>"To become a skilled SOC Analyst who contributes to building secure digital environments, protecting organizations from evolving cyber threats, and inspiring future generations in the cybersecurity field."</p>
-                <h3>Mission</h3>
-                <ul>
-                    <li>Develop strong skills in threat detection and incident response.</li>
-                    <li>Gain hands-on expertise with SOC tools and security operations.</li>
-                    <li>Support organizations in maintaining resilience against cyber threats.</li>
-                    <li>Continuously learn and adapt to evolving cybersecurity challenges.</li>
+        </div>
+    </section>
+    
+    <section id="skills" class="section-padded">
+        <div class="container">
+            [cite_start]<h3 style="text-align: center;">Technical & Personal Skills [cite: 35]</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Core Specialties (Technical)</h4>
+                    <ul>
+                        [cite_start]<li>**Incident Response** [cite: 36, 37]</li>
+                        [cite_start]<li>**Vulnerability Assessment** [cite: 38, 39]</li>
+                        [cite_start]<li>**Malware Analysis** [cite: 40, 41]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4>Soft Skills (Attributes)</h4>
+                    <ul>
+                        [cite_start]<li>Analytical [cite: 21]</li>
+                        [cite_start]<li>Detail-Oriented [cite: 22]</li>
+                        [cite_start]<li>Problem Solver [cite: 23]</li>
+                        [cite_start]<li>Team Player [cite: 24]</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4>Tools & Expertise</h4>
+                    <ul>
+                        [cite_start]<li>**Burp Suite** [cite: 135]</li>
+                        [cite_start]<li>**OWASP ZAP** [cite: 135]</li>
+                        [cite_start]<li>**Kali Linux** [cite: 135]</li>
+                        [cite_start]<li>Threat Detection & Incident Response [cite: 29]</li>
+                        [cite_start]<li>Experience in SOC Tools for Incident Analysis [cite: 62]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padded alt-bg">
+        <div class="container">
+            [cite_start]<h3 style="text-align: center;">Educational Background [cite: 48]</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    [cite_start]<h4>**MENOFIA UNIVERSITY** [cite: 49]</h4>
+                    [cite_start]<strong>Faculty of Artificial Intelligence, Cybersecurity Department [cite: 51, 52]</strong>
+                    [cite_start]<p>2023 - 2027 [cite: 50]</p>
+                </div>
+                <div class="timeline-item">
+                    [cite_start]<h4>**Cisco Networking Course** (Training Program) [cite: 53, 54]</h4>
+                    [cite_start]<p>Covered networking fundamentals, routing & switching basics, and hands-on labs to build practical skills. [cite: 56]</p>
+                    [cite_start]<p>2024 [cite: 55]</p>
+                </div>
+                <div class="timeline-item">
+                    [cite_start]<h4>Cyber Security Fundamentals Course (NTI) [cite: 61]</h4>
+                    [cite_start]<p>Learned how networks operate, including IP addresses, protocols, and common security threats. [cite: 61]</p>
+                    [cite_start]<p>Practiced using SOC tools to detect and analyze incidents, gaining experience in vulnerability assessment, penetration testing, and risk analysis. [cite: 62]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="section-padded">
+        <div class="container">
+            <h3 style="text-align: center;">Featured Project</h3>
+            <div class="project-card">
+                [cite_start]<h4>**Vulnerability Assessment on Mutillidae Web Application** [cite: 65]</h4>
+                [cite_start]<p class="project-overview">Completed a penetration testing project as part of the Cybersecurity Academy Training by the National Telecommunication Institute (NTI). [cite: 67] [cite_start]The project focused on assessing security vulnerabilities in Mutillidae, a deliberately vulnerable web application. [cite: 68]</p>
+                [cite_start]<h5 style="color: #007BFF; margin-top: 20px;">Key Deliverables: [cite: 121]</h5>
+                <ul style="list-style: square; margin-left: 25px;">
+                    [cite_start]<li>Identified and exploited multiple vulnerabilities including: **SQL Injection**, Local File Inclusion (LFI), Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Command Injection & Reverse Shell, PII Disclosure, IDOR, and Security Misconfigurations. [cite: 133]</li>
+                    [cite_start]<li>Documented findings in a professional penetration testing report with Proof of Concepts (PoCs). [cite: 134]</li>
+                    [cite_start]<li>Applied industry-standard tools such as Burp Suite, OWASP ZAP, and Kali Linux for testing. [cite: 135]</li>
+                    [cite_start]<li>Collaborated in a team environment, enhancing teamwork and technical reporting skills. [cite: 136]</li>
                 </ul>
+                [cite_start]<p style="margin-top: 20px; font-weight: bold; font-style: italic;">Example Payload: OR '1'='1' (for login bypass/data disclosure) [cite: 118, 119]</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills">
-        <h2>Technical Skills</h2>
-        <div class="skill-grid">
-            <div class="skill-item">Incident Response</div>
-            <div class="skill-item">Vulnerability Assessment</div>
-            <div class="skill-item">Malware Analysis</div>
-            <div class="skill-item">Burp Suite / OWASP ZAP</div>
-            <div class="skill-item">Command Injection & Reverse Shell</div>
-            <div class="skill-item">SQL/XSS/LFI Exploitation</div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Featured Project: Vulnerability Assessment</h2>
-        <div class="project-card">
-            <h3>Assessment on Mutillidae Web Application</h3>
-            <p class="project-overview">
-                Completed a penetration testing project as part of the Cybersecurity Academy Training by the National Telecommunication Institute (NTI). The project focused on assessing security vulnerabilities in Mutillidae, a deliberately vulnerable web application.
-            </p>
-            <div class="deliverables">
-                <h4>Key Deliverables:</h4>
-                <ul>
-                    <li>Identified and exploited multiple vulnerabilities including Local File Inclusion (LFI), Cross-Site Scripting (XSS), SQL Injection, Cross-Site Request Forgery (CSRF), Command Injection & Reverse Shell, PII Disclosure, IDOR, and Security Misconfigurations.</li>
-                    <li>Documented findings in a professional penetration testing report with Proof of Concepts (PoCs).</li>
-                    <li>Applied industry-standard tools such as Burp Suite, OWASP ZAP, and Kali Linux for testing.</li>
-                    <li>Demonstrated ability to **Bypass authentication** and **Expose or modify database contents** using SQL injection payloads.</li>
-                </ul>
+    <section id="contact" class="section-padded alt-bg">
+        <div class="container" style="text-align: center;">
+            [cite_start]<h3>Let's Work Together! [cite: 138, 139]</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">I'm eager to contribute to building secure digital environments. Feel free to connect!</p>
+            <div class="contact-info">
+                [cite_start]<p><strong>Email:</strong> <a href="mailto:menna.eldemerdash12@gmail.com">menna.eldemerdash12@gmail.com</a> [cite: 4, 142]</p>
+                [cite_start]<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/menna-eldemerdash" target="_blank">linkedin.com/in/menna-eldemerdash</a> [cite: 141]</p>
+                [cite_start]<p><strong>Phone:</strong> <a href="tel:01113222340">01113222340</a> [cite: 140]</p>
             </div>
-            <a href="#" class="button">View Full Report (Link to PDF/External Site) &rarr;</a>
-        </div>
-    </section>
-
-    <section id="education" class="education">
-        <h2>Education & Training</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Menofia University</h3>
-                <p class="detail">Faculty of Artificial Intelligence, Cybersecurity Department</p>
-                <span class="date">2023 - 2027</span>
-            </div>
-            <div class="timeline-item">
-                <h3>Cisco Networking Course</h3>
-                <p class="detail">Covered networking fundamentals, routing & switching basics, and hands-on labs.</p>
-                <span class="date">2024</span>
-            </div>
-            <div class="timeline-item">
-                <h3>Online Courses (NTI Cyber Security Fundamentals)</h3>
-                <p class="detail">Learned network operation (IPs, protocols, threats) and practiced SOC tools for incident analysis, vulnerability assessment, and risk analysis.</p>
-                <span class="date">Training Program</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Let's work **TOGETHER**</h2>
-        <div class="contact-details">
-            <p>Email: <a href="mailto:menna.eldemerdash12@gmail.com">menna.eldemerdash12@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/menna-eldemerdash">www.linkedin.com/in/menna-eldemerdash</a></p>
-            <p>Phone: +20 111 322 2340 (Example)</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Menna Eldemerdash | Cybersecurity Portfolio</p>
+        <div class="container">
+            <p>&copy; 2025 Menna Eldemerdash. Creative Cybersecurity Portfolio.</p>
+        </div>
     </footer>
 
 </body>
